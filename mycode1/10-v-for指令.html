@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Vue基本模板</title>
+    <!--1.下载导入Vue.js-->
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <ul>-->
+<!--        <li v-for="(v, i) in arr">{{v}}</li>-->
+<!--    </ul>-->
+<!--    相当于for in 循环-->
+    <div v-for="(v, k) in obj">
+        <span>{{k}}</span>：
+        <span>{{v}}</span>
+    </div>
+</div>
+<script>
+    // 2.创建一个Vue的实例对象
+    let vue = new Vue({
+        // 3.告诉Vue的实例对象, 将来需要控制界面上的哪个区域
+        el: '#app',
+        // 4.告诉Vue的实例对象, 被控制区域的数据是什么
+        data: {
+            arr: ["宋江", "晁盖", "吴用"],
+            obj: {
+                name: "宋江",
+                age: "40",
+                rank: 1,
+            }
+        }
+    });
+</script>
+</body>
+</html>
