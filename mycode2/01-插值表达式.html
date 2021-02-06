@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app1"></div>
+<div id="app2">
+    <div>{{msg}}</div>
+    <p>{{new Date()}}</p>
+    <p>{{-1 > 0 ? '真' : '假'}}</p>
+</div>
+<script>
+    let vm = new Vue({
+        el: '#app1',
+        // 必须要有根标签
+        template: `
+            <div>hello vue</div>
+        `
+    });
+
+    let vm2 = new Vue({
+        el: '#app2',
+        template: ``,
+        data() {
+            return {
+                msg: '大噶第三个'
+            }
+        }
+    });
+</script>
+</body>
+</html>

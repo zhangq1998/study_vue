@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app2">
+<!--    v-text 相当于innerText -->
+    <div v-text="msg + 'dfsd'"></div>
+<!--    v-html 相当于innerHTML-->
+    <div v-html="html"></div>
+<!--    v-if : 判断是否插入这个元素,相当于对元素的销毁和创建-->
+    <div v-if="isShow">显示了</div>
+<!--    v-show 隐藏元素  如果确定要隐藏,   会给元素的style加上display:none。是基于css样式的切换-->
+    <div v-show="isShow">显示了</div>
+<!--    v-model 数据双向绑定 使用于input checkbox textarea-->
+    <input type="text" v-model="isShow">
+<!--    v-bind 给html动态绑定属性-->
+    <div v-bind:title="isShow">一段文本</div>
+<!--    v-on 用于绑定事件-->
+    <button v-on:click="isShow = !isShow">切换</button>
+    <ul>
+        <li v-for="(obj, index) in list">
+            {{obj.alias}} : {{obj.name}}
+        </li>
+    </ul>
+</div>
+<script>
+
+    let vm2 = new Vue({
+        el: '#app2',
+        template: ``,
+        data() {
+            return {
+                msg: '大噶第三个',
+                html: `
+                    <ul>
+                        <li>111</li>
+                        <li>222</li>
+                        <li>333</li>
+                    </ul>
+                `,
+                isShow: false,
+                list: [
+                    {
+                        name: "宋江",
+                        alias: "及时雨"
+                    },
+                    {
+                        name: "花荣",
+                        alias: "小李广"
+                    },
+                    {
+                        name: "吴用",
+                        alias: "智多星"
+                    }
+                ]
+            }
+        }
+    });
+</script>
+</body>
+</html>
