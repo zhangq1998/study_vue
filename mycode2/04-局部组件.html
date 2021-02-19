@@ -7,20 +7,45 @@
 </head>
 <body>
 <div id="app">
-	<app/>
+	<app :aaa='arg'></app>
 </div>
 <script>
+	/*
+		1、创建子组件
+		2、在父组件声明，挂载
+		3、使用子组件
+		
+		
+		父子组件传值
+		1、父用子的时候通过动态属性传值
+		2、子组件声明props接收
+		3、然后随便用，和data一样
+	*/
 	
 	let App = {
-		template: `<div>1112221</div>`
+		template: `
+			<div>
+				<div>1112221</div>
+				<div>{{aaa}}</div>
+			</div>
+		`,
+		data () {
+			return {
+				msg: 'xxxx'
+			}
+		},
+		props: ['aaa']
 	};
+	
+	
 
     let vm = new Vue({
         el: '#app',
         template: ``,
         data() {
             return {
-                msg: '大噶第三个'
+                msg: '大噶第三个',
+				arg: '传值'
             }
         },
 		components: {

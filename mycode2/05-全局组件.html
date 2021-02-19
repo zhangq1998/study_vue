@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<my-vue></my-vue>
+</div>
+<script>
+	
+	Vue.component("MyVue", {
+		template: `<div>MyVue  {{msg}}</div>`,
+		data () {
+			return {
+				msg: 'dfsdf'
+			}
+		}
+	});
+	
+    let vm = new Vue({
+        el: '#app',
+        template: ``,
+        data() {
+            return {
+                msg: '大噶第三个',
+				arg: '传值'
+            }
+        }
+    });
+</script>
+</body>
+</html>
