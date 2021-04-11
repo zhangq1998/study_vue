@@ -83,7 +83,7 @@
     2. 给vm及组件对象挂在的方式  :  Object.defineProperty(Vue.prototype,'$router',{
 
        ​	get:function () {
-       		return 自己的router对象;
+       ​		return 自己的router对象;
 
        ​	}
 
@@ -238,6 +238,6 @@ Axios.method('url',[,..data],options)
 
     ```
 
-    ​
+    
 
 
