@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	{{name}}
+	<!-- v-html 会覆盖内容 xss攻击 -->
+</div>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        // 必须要有根标签
+        template: ``,
+		data () {
+			return {
+				name: 'zq'
+			}
+		}
+    });
+</script>
+</body>
+</html>
