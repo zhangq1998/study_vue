@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<!--
+全局指令  Vue静态方法  Vue.directive
+局部指令  vm配置 directives
+-->
+
+<body>
+    <div id="app">
+        <div v-upper-text>abc</div>
+        <div v-lower-text>ADSDFG</div>
+    </div>
+    <script>
+
+        Vue.directive('upper-text', function (el, binding) {
+            el.innerText = el.innerText.toUpperCase();
+        });
+
+
+        let vm = new Vue({
+            el: '#app',
+            template: ``,
+            data() {
+                return {
+                    a: 1,
+                    b: 2
+                }
+            },
+            directives: {
+                'lower-text': function (el, binding) {
+                    el.innerText = el.innerText.toLowerCase();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
