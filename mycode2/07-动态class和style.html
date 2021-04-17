@@ -1,0 +1,61 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-15 13:35:15
+ * @LastEditTime: 2021-04-15 17:23:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \study_vue\mycode2\07-动态class和style.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .a {
+            font-size: 20px
+        }
+        .b {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>class</h2>
+       <p class="a" :class="aClass">字符串</p> 
+       <p class="a" :class="[aClass]">数组</p>
+       <p class="a" :class="{b: true}">对象</p>
+       <h2>style</h2>
+       <p :style="styleObj"></p>
+    </div>
+    <script>
+
+/*
+        class：静态和动态可以同时存在  
+                格式：字符串、对象、数组
+        
+        style：静态和动态可以同时存在
+*/
+
+        let vm = new Vue({
+            el: '#app',
+            template: ``,
+            data() {
+                return {
+                    aClass: 'b',
+                    styleObj: {
+                        width: '100px',
+                        height: '100px',
+                        backgroundColor: 'red'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

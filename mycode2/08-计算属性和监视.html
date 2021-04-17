@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>计算属性</h2>
+        姓: <input v-model="firstName" />
+        名: <input v-model="lastName">
+        姓名：<input v-model="fullName" />
+
+        <h2>监视</h2>
+        <input v-model="obj.name"/> <br>
+        <input v-model="obj.age"/>
+    </div>
+    <script>
+
+/*
+        computed:  有缓存  get和set
+        watch：监视vm的属性  可异步  可深度监视
+               可以使用vue实列方法$watch()监视 
+*/
+
+        let vm = new Vue({
+            el: '#app',
+            template: ``,
+            data() {
+                return {
+                    firstName: '',
+                    lastName: '',
+                    obj: {
+                        name: "zs",
+                        age: 18
+                    }
+                }
+            },
+            computed: {
+                fullName: {
+                    get() {
+                        return this.firstName + this.lastName;
+                    },
+                    set(val) {
+                        this.firstName = val.substring(0, 1);
+                        this.lastName = val.substring(1);
+                    }
+                }
+            },
+            watch: {
+                obj: {
+                    deep: true,
+                    handler (value) {
+                        console.log(value);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

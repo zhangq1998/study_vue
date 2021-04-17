@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+<body>
+    <div id="app">
+        <button @click="click1">点击1</button>
+        <button @click="click2(2, $event)">点击2</button>
+    </div>
+    <script>
+
+
+        let vm = new Vue({
+            el: '#app',
+            template: ``,
+            data() {
+                return {
+                    firstName: '',
+                    lastName: '',
+                    obj: {
+                        name: "zs",
+                        age: 18
+                    }
+                }
+            },
+            methods: {
+                click1(event) {
+                    console.log(event);
+                },
+                click2(num, event) {
+                    console.log(num, event);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

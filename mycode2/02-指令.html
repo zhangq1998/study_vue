@@ -22,7 +22,7 @@
 <!--    v-on 用于绑定事件-->
     <button v-on:click="isShow = !isShow">切换</button>
     <ul>
-        <li v-for="(obj, index) in list">
+        <li v-for="(obj, index) in list" :key="obj.name">
             {{obj.alias}} : {{obj.name}}
         </li>
     </ul>
