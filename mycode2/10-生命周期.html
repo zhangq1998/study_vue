@@ -26,6 +26,9 @@
                     b: 2
                 }
             },
+            beforeCreated () {
+                console.log('beforeCreated' + this)
+            },
             created() {
                 console.log(this.a);
                 console.log('created' + this.$refs.abc) // 拿不到
